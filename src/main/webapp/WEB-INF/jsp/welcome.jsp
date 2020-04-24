@@ -8,5 +8,6 @@
 </head>
 <body>
 Insert hkkejnsd heredsfdsfsd
+<a href="/next">welcome</a>
 </body>
 </html>

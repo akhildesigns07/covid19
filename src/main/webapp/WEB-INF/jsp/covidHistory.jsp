@@ -19,7 +19,8 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		text: "Confirmed Cases in india"
 	},
 	axisY: {
-		title: "People"
+		title: "People",
+		labelFontSize: 10
 		
 	},
 	data: [{
@@ -57,7 +58,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 		
 	},
 	data: [{
-		type: "line",
+		type: "column",
 		yValueFormatString: "#0",
 		indexLabel: "{y}",
 		dataPoints: dpss[0]
@@ -65,7 +66,8 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 });
 
 <c:forEach items="${dataPointsList2}" var="dataPointst" varStatus="loopp">	
-	<c:forEach items="${dataPointst}" var="dataPointt">
+	<c:forEach items="${dataPointst}" var="dataPointt" varStatus="innerLoop">
+	
 	yValuee = parseFloat("${dataPointt.y}");
 	labell = "${dataPointt.label}";
 		dpss[parseInt("${loopp.index}")].push({
@@ -105,8 +107,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 			});		
 		</c:forEach>	
 	</c:forEach> 
-	console.log(dpsss);
-
+	
 	 chart3.render();
 	 chart={};
 
